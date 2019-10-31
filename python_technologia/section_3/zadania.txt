@@ -1,0 +1,52 @@
+--- virtualenv ---
+
+1. zainstaluj virtualenva korzystajac z pip
+2. zalóz nowe srodowisko wirtualne (nazwa dowolna); przeszukaj katalog i zobacz z czego sklada sie utworzone srodowisko
+3. uaktywnij w terminalu srodowisko virtualenv:
+ - linux: komenda "source nazwa_srodowiska/bin/activate"
+ - windows: komenda "nazwa_srodowiska/Scripts/activate"
+4. po lewej stronie od aktualnej sciezki w terminalu powinna sie pojawic nazwa naszego srodowiska w nawiasach
+5. wykonaj polecenie pip freeze i sprawdz czy znajdujesz sie w odizolowanym srodowisku
+6. zainstaluj biblioteke ipython i spróbuj ja uruchomic z terminala w srodowisku wirtualnym
+7. poszukaj w internecie unikalnej bilbioteki pythonowej, której nie masz zainstalowanej na lokalnym systemie i zainstaluj ja w srodowisku virtualenv
+8. uzyj komendy pip freeze, deaktywuj srodowisko i porównaj z lista bibliotek zainstalowanych na maszynie lokalnej (poza srodowiskiem wirtualnym)
+9. aktywuj raz jeszcze Twoje srodowisko, czy zainstalowane wczesniej biblioteki sa widoczne?
+10. zainstaluj w srodowisku biblioteke zewnetrzna numpy (do czego ona sluzy?)
+11. stwórz plik "main.py" poza katalogiem z plikami konfiguracyjnymi Twojego srodowiska - umiesc w nim jedna linijke: import numpy
+12. spróbuj uruchomic plik z poziomu virtualenva (modul powinien sie zaimportowac)
+13. wyjdz raz jeszcze z virtualenva
+14. uruchom Twój plik ponownie - jaki jest wynik?
+
+
+--- virtualenvwrapper linux ---
+
+1. zainstaluj virtualenvwrapper korzystajac z pipa
+2. stwórz nowy katalog (jakikolwiek, bedzie on wykorzystywany na przechowywanie wirtualnych srodowisk) oraz nowa zmienna srodowiskowa ze sciezka do nowo utworzonego katalogu jako jej wartoscia: export WORKON_HOME=sciezka_do_katalogu (zmienna musi sie nazywac WORKON_HOME!)
+3. dodaj te linijke na koncu pliku .bashrc:
+. /usr/local/bin/virtualenvwrapper.sh
+4. nadpisz zmienna VIRTUALENVWRAPPER_PYTHON wpisujac komende "export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3" (jezeli chcesz, zeby zmienne ustawione powyzej mialy zawsze te sama wartosc, umiesc ich deklaracje równiez w pliku .bashrc)
+5. stwórz nowe srodowisko wirtualne komenda:
+mkvirtualenv <nazwa_srodowiska>
+6. sprawdz czy udalo sie utworzyc srodowisko i gdzie znajduja sie jego pliki poleceniem: lsvirtualenv
+7. uaktywnij srodowisko poleceniem: workon <nazwa_srodowiska> (moze istniec koniecznosc zmiany terminala na batchowy "cmd")
+8. stwórz plik hello.py na tym samym poziomie katalogowym co Twoje srodowisko wirtualne (tj. nie w katalogu srodowiska, ale niejako obok) z kodem dzialajacym tylko na pythonie 2:
+liczba = raw_input("Podaj liczbe: ")
+print liczba
+9. uruchom plik z poziomu wirtualnego srodowiska (powinien zostac wyrzucony blad - srodowisko korzysta z pythona 3)
+10. deaktywuj srodowisko
+11. usun srodowisko i sprawdz poleceniem lsvirtualenv czy dalej jest ono widoczne
+
+--- virtualenvwrapper windows ---
+1. zainstaluj virtualenvwrappera korzystajac z pip:
+pip install virtualenvwrapper-win
+2. dodaj zmienna srodowiskowa o nazwie WORKON_HOME o wartosci sciezki do katalogu, w którym chcesz by przechowywane byly srodowiska wirtualne (%USERPROFILE%\Envs - to domyslna sciezka)
+3. stwórz nowe srodowisko wirtualne komenda:
+mkvirtualenv <nazwa_srodowiska>
+4. sprawdz czy udalo sie utworzyc srodowisko i gdzie znajduja sie jego pliki poleceniem: lsvirtualenv
+5. uaktywnij srodowisko poleceniem: workon <nazwa_srodowiska> (moze istniec koniecznosc zmiany terminala na batchowy "cmd")
+6. stwórz plik hello.py na tym samym poziomie katalogowym co Twoje srodowisko wirtualne (tj. nie w katalogu srodowiska, ale niejako obok) z kodem dzialajacym tylko na pythonie 2:
+liczba = raw_input("Podaj liczbe: ")
+print liczba
+7. uruchom plik z poziomu wirtualnego srodowiska (powinien zostac wyrzucony blad - srodowisko korzysta z pythona 3)
+8. deaktywuj srodowisko
+9. usun srodowisko i sprawdz poleceniem lsvirtualenv czy dalej jest ono widoczne
