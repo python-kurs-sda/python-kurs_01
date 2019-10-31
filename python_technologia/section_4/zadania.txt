@@ -1,0 +1,30 @@
+- zainstaluj i skonfiguruj pyenva (w zaleznosci od systemu operacyjnego, wybierz odpowiednia sciezke)
+
+--- Linux ---
+1. zainstaluj wszystkie potrzebne zaleznosci, zgodnie ze swoja destrybucja systemu, wiecej informacji na stronie: https://github.com/pyenv/pyenv/wiki
+(by sprawdzic swoja dystrybucje systemu, wykonaj w terminalu: lsb_release -a LUB cat /etc/*release LUB cat /etc/issue* LUB cat /proc/version.)
+2. zainstaluj pyenva, wpisz w terminalu: "curl https://pyenv.run | bash" lub "curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash", dodaj 3 linijki do pliku ~/.bashrc zgodnie z instrukcja instalatora (polecam uzyc komendy gedit ~/.bashrc do otworzenia notatnika); wykonaj komende "pyenv init", ona poinstruuje Cie, do jakiego pliku dopisac na koncu instrukcje "eval "$(pyenv init -)"
+
+--- Windows ---
+zalecany terminal powershell
+1. zainstaluj pyenva na windowsa komenda "pip install pyenv-win --target %USERPROFILE%/.pyenv"; czesc po --target wskazuje miejsce, w którym instalowane beda wersje pythona (innymi slowy: katalog domowy pyenva)
+2. dodaj do zmiennych srodowiskowych dwie sciezki dla pyenva (My Computer -> Properties -> Advanced system settings -> Advanced -> Environment Variables -> PATH):
+%USERPROFILE%\.pyenv\pyenv-win\bin;
+%USERPROFILE%\.pyenv\pyenv-win\shims;
+
+- kolejne instrukcje sa takie same zarówno dla Linuksa jak i dla Windowsa:
+3. w celu potwierdzenia czy pyenv zostal zainstalowany poprawnie, wpisz w terminalu: pyenv (powinny sie wyswietlic mozliwe komendy do wpisania), zrestartuj terminal
+4. zainstaluj pythona w wersji 2.5 z wykorzystaniem pyenva
+5. sprawdz jakie wersje pythona sa aktualnie obslugiwane przez pyenv, przelacz sie na pythona 2.5 (wskazówka: polecenia global i shell), w przypadku problemów, polecam zajrzec na https://github.com/pyenv/pyenv
+6. uruchom interpreter pythona (powinna sie uruchomic wersja przeznaczona dla pythona 2.5)
+7. w interpreterze wpisz komende dzialajaca tylko w pythonie 2, np taka:
+print "Hello world!"
+8. powinien pojawic sie napis "Hello world!".
+9. wyjdz z terminala
+10. przelacz sie na pythona 3 badz systemowego (jezeli takowego nie ma, badz systemowy nie ma wersji 3 wzwyz, zainstaluj pythona 3.7 z wykorzystaniem pyenva)
+11. wejdz do interpretera pythona, wykonaj polecenie:
+print "Hello world!"
+12. powinien pojawic sie komunikat o bledzie
+13. przywróc domyslne ustawienia komenda "pyenv shell --unset"
+
+- uruchom pycharma i spróbuj, zgodnie z wytycznymi ze slajdów, podlaczyc do projektu pythona w wersji 2.5, sprawdz poprawnosc wykonania zadania uruchamiajac Python Console (View -> Tool Windows -> Python Console)

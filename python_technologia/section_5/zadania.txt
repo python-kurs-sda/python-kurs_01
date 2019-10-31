@@ -1,0 +1,17 @@
+1. wykorzystujac slajdy i zaprezentowany przyklad, stwórz pakiet zawierajacy odpowiednie pliki i katalogi umozliwiajace wyeksportowanie projektu do PyPI, konieczne beda:
+- katalog z naszym programem, nalezy zrobic z niego pakiet pythonowy i dostarczyc przynajmniej jedna publiczna funkcje;
+- plik README.md
+- plik MANIFEST.in
+- plik setup.py z odpowiednimi polami takimi jak: name (powinien byc oryginalny, w innym przypadku nie uda sie wyeksportowac projektu), version, description, packages, install_requires (jesli potrzebne)
+2. utwórz paczke z programem poleceniem (konieczne jest, by podczas uruchamiania polecenia znajdowac sie w tym samym katalogu co nasz projekt):
+python setup.py sdist
+3. spróbuj wypakowac projekt poleceniem:
+python setup.py develop;
+sprawdz czy program dziala
+4. utwórz konto na stronie: https://pypi.org/account/register/
+5. wypchnij swoje dzielo w swiat korzystajac z polecenia:
+twine upload <sciezka do Twojego spakowanego projektu>
+jezeli wykonanie nie jest mozliwe, sprawdz czy twine jest zainstalowany jako zewnetrzna biblioteka, jezeli otrzymujesz error ze statusem 403, oznacza to, ze nazwa Twojego pakietu jest nieodpowiednia (zly format badz powtarza sie w PyPI).
+6. po poprawnym dolaczeniu paczki do PyPI, popros sasiada o wykonanie komendy:
+pip install <nazwa_twojego_projektu>
+7. po instalacji powinna istniec mozliwosc bezposredniego importu Twojej biblioteki w terminalu pythona (sciezki do zewnetrznych  bibliotek wpisane sa do sys.path) - zaimportuj Twój program i przetestuj jego dzialanie uruchamiajac napisane funkcje/klase(y)

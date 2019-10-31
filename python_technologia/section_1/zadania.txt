@@ -1,0 +1,9 @@
+1. Uruchom program main.py komenda "python main.py"
+2. Z kilku powodów kod nie bedzie mógl wykonac sie poprawnie
+3. Twoim zadaniem jest tak zmianic kod, by program dzialal
+
+Uwagi:
+- importów i bloku petli while w funkcji lotto z pliku main.py nie nalezy zmieniac (w ogóle),
+- nie wolno przenosic definicji z jednego pliku do drugiego,
+- zadanie da sie rozwiazac bez tworzenia dodatkowych badz usuwania niepotrzebnych plików,
+- poza tym mozna zmieniac wszystko.
