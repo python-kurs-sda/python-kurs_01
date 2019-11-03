@@ -25,9 +25,6 @@ class TestZeros(unittest.TestCase):
     def test_multiple_zeros(self):
         self.assertEqual(count_zeros(100010), 4)
 
-    def test_with_zeros_at_the_beginning(self):
-        self.assertEqual(count_zeros(001010), 2)  # z poczatku sie nie licza, liczba to dalej 1010
-
     def test_number_only_with_zeros(self):
         self.assertEqual(count_zeros(00000), 1)
 
