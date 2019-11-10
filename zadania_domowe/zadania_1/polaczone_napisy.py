@@ -23,4 +23,18 @@ def merge_strings(string1, string2):
     :return: napis zlozony z podanych jako argumenty.
 
     """
-    pass
+    new_string = ""
+    end_of_string = ""
+    common_length = len(string1)
+
+    if len(string1) > len(string2):
+        end_of_string = string1[len(string2):]
+        common_length = len(string2)
+    elif len(string1) < len(string2):
+        end_of_string = string2[len(string1):]
+
+    for i in range(common_length):
+        new_string += string1[i] + string2[i]
+
+    return new_string + end_of_string
+
