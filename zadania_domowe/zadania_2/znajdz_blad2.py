@@ -14,6 +14,15 @@
 
 def compute_sum(numbers):
     ans = 0
-    for i in range(1, len(numbers)):
+    for i in range(len(numbers)):
         ans = ans + numbers[i]
     return ans
+
+
+if __name__ == '__main__':
+
+    a = [0, 1, 2, 3, 4, 5]
+    b = [1, 2, 3, 4, 5]
+    c = [100, 1, 2, 3, 100]
+
+    print(compute_sum(c))
