@@ -21,3 +21,26 @@ CLASS_REGISTER = {
     "Mikolaj": 4.0,
     "Robert": 3.0
 }
+
+
+def get_all_rate(items):
+    return [x for x in items.values()]
+
+
+def get_max_rate(items):
+    return max(get_all_rate(items))
+
+
+def get_rate_equal_2(items):
+    return sum(1 for x in items.values() if x == 2.0)
+
+
+def get_name_with_best_rate(items):
+    return max(items, key=items.get)
+
+
+if __name__ == '__main__':
+    print(get_all_rate(CLASS_REGISTER))
+    print(get_max_rate(CLASS_REGISTER))
+    print(get_rate_equal_2(CLASS_REGISTER))
+    print(get_name_with_best_rate(CLASS_REGISTER))
